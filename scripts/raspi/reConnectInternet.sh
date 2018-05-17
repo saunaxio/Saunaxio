@@ -8,10 +8,10 @@ then
 else
 	aplay /home/pi/Music/tts/reconnectInternet.wav
 	sudo ifdown wlan0
-	sudo ifdown enxb827eb325527
+	sudo ifdown eth0
 	sleep 5
 	sudo ifup wlan0
-	sudo ifup enxb827eb325527
+	sudo ifup eth0
 	sleep 5
 	if [ $? -eq 0 ]
 	then
