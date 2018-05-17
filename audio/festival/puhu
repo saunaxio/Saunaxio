@@ -1,0 +1,4 @@
+#!/bin/bash
+# Located in /usr/bin/
+sanat="$@"
+sudo -u pi bash -c "echo \"$sanat\" | iconv -f UTF-8 -t ISO8859-1 | festival --language finnish --tts"
