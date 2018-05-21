@@ -1,0 +1,2426 @@
+[
+    {
+        "id": "d52c0666.cf1628",
+        "type": "tab",
+        "label": "Sensors",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "c9c7925f.a161e",
+        "type": "tab",
+        "label": "Shell",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a202612d.e90ab",
+        "type": "tab",
+        "label": "Weather",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "5e9ba1ee.1e221",
+        "type": "tls-config",
+        "z": "",
+        "name": "influx",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "verifyservercert": false
+    },
+    {
+        "id": "96fb7390.97b12",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "tls": "5e9ba1ee.1e221",
+        "clientid": "",
+        "usetls": false,
+        "verifyservercert": true,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": ""
+    },
+    {
+        "id": "b29ef82b.7af8f8",
+        "type": "tls-config",
+        "z": "",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "verifyservercert": true
+    },
+    {
+        "id": "5b748d8b.e60d14",
+        "type": "tls-config",
+        "z": "",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "verifyservercert": true
+    },
+    {
+        "id": "58280a67.bd0ae4",
+        "type": "influxdb",
+        "z": "",
+        "hostname": "",
+        "port": "8086",
+        "protocol": "http",
+        "database": "",
+        "name": "",
+        "usetls": true,
+        "tls": "5e9ba1ee.1e221"
+    },
+    {
+        "id": "5705e088.d2655",
+        "type": "tls-config",
+        "z": "",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "verifyservercert": true
+    },
+    {
+        "id": "151046a9.44db99",
+        "type": "ui_base",
+        "z": 0,
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "Times New Roman,Times,serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "Arial Narrow,Nimbus Sans L,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "default": "#4B7930",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#000000",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "Arial Narrow,Nimbus Sans L,sans-serif"
+                }
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "a4c0a1d0.b95f8",
+        "type": "ui_tab",
+        "z": 0,
+        "name": "Charts",
+        "icon": "dashboard",
+        "order": 4
+    },
+    {
+        "id": "36c318d2.581688",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Humidity",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "9172bbfb.9dbe38",
+        "type": "ui_tab",
+        "z": 0,
+        "name": "CPU",
+        "icon": "dashboard",
+        "order": 5
+    },
+    {
+        "id": "c95734e1.969f48",
+        "type": "ui_group",
+        "z": "",
+        "name": "Humidity",
+        "tab": "36c318d2.581688",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "4655c9da.0276a8",
+        "type": "ui_group",
+        "z": 0,
+        "name": "Ping",
+        "tab": "9172bbfb.9dbe38",
+        "order": 1,
+        "disp": true,
+        "width": "5"
+    },
+    {
+        "id": "3f5ef979.504166",
+        "type": "ui_group",
+        "z": 0,
+        "name": "Charts",
+        "tab": "a4c0a1d0.b95f8",
+        "order": 1,
+        "disp": true,
+        "width": "15"
+    },
+    {
+        "id": "b1e2b92c.b1c858",
+        "type": "ui_group",
+        "z": "",
+        "name": "Roof insulation",
+        "tab": "264e1c9b.d6d3d4",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "a2ee02de.bd307",
+        "type": "ui_group",
+        "z": 0,
+        "name": "Water level",
+        "tab": "36c318d2.581688",
+        "order": 2,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "6b7e7f97.00a97",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Temperature",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "264e1c9b.d6d3d4",
+        "type": "ui_tab",
+        "z": "",
+        "name": "RuuviTags",
+        "icon": "dashboard",
+        "order": 3
+    },
+    {
+        "id": "d2b01fcb.31cba",
+        "type": "ui_group",
+        "z": "",
+        "name": "Air income",
+        "tab": "264e1c9b.d6d3d4",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "11988d40.af8303",
+        "type": "ui_group",
+        "z": "",
+        "name": "Left wall, lower",
+        "tab": "6b7e7f97.00a97",
+        "order": 1,
+        "disp": true,
+        "width": "7",
+        "collapse": false
+    },
+    {
+        "id": "a582827.523728",
+        "type": "ui_link",
+        "z": "",
+        "name": "Mopidy Music Player",
+        "link": "http://sauna.local:6680/",
+        "icon": "open_in_browser",
+        "target": "iframe",
+        "order": 6
+    },
+    {
+        "id": "e09b8ac2.2d2eb8",
+        "type": "ui_link",
+        "z": "",
+        "name": "Home Assistant",
+        "link": "http://sauna.local:8123",
+        "icon": "open_in_browser",
+        "target": "iframe",
+        "order": 7
+    },
+    {
+        "id": "b9cd5646.956cf8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Left wall, upper",
+        "tab": "6b7e7f97.00a97",
+        "order": 2,
+        "disp": true,
+        "width": "7",
+        "collapse": false
+    },
+    {
+        "id": "dda8748a.0bd338",
+        "type": "ui_group",
+        "z": "",
+        "name": "Roof, above stove",
+        "tab": "6b7e7f97.00a97",
+        "order": 3,
+        "disp": true,
+        "width": "7",
+        "collapse": false
+    },
+    {
+        "id": "6e2bfc07.0fdd44",
+        "type": "ruuvitag",
+        "z": "d52c0666.cf1628",
+        "name": "RuuviTag",
+        "x": 1080,
+        "y": 140,
+        "wires": [
+            [
+                "b30359a2.c0e1e8"
+            ]
+        ]
+    },
+    {
+        "id": "ca2aec3f.13508",
+        "type": "function",
+        "z": "d52c0666.cf1628",
+        "name": "deviceNaming",
+        "func": "msg.payload=JSON.parse(msg.payload);\nmsg.payload.topic = msg.peripheralUuid;\nmsg.topic = msg.payload.topic;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1140,
+        "y": 320,
+        "wires": [
+            [
+                "669d5a8f.5e8784",
+                "fa17ff76.779a",
+                "1d42401f.e66dc",
+                "decacb76.606148",
+                "c168805b.7fffc",
+                "f2b5ca11.a9a668",
+                "2c83bf8a.2b397"
+            ]
+        ]
+    },
+    {
+        "id": "be0bb315.d90ca",
+        "type": "inject",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "30",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "10",
+        "x": 170,
+        "y": 860,
+        "wires": [
+            [
+                "3c761270.5a15be",
+                "509dff4.87d09",
+                "616f4c74.36a594",
+                "beb86b12.d8e038",
+                "9f001eef.a7667"
+            ]
+        ]
+    },
+    {
+        "id": "3c761270.5a15be",
+        "type": "rpi-ds18b20",
+        "z": "d52c0666.cf1628",
+        "topic": "",
+        "array": false,
+        "name": "DS18B20",
+        "x": 400,
+        "y": 980,
+        "wires": [
+            [
+                "1d24265d.59c36a"
+            ]
+        ]
+    },
+    {
+        "id": "d4597a45.b427d8",
+        "type": "function",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "func": "msg.payload=msg.humidity;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 590,
+        "y": 720,
+        "wires": [
+            [
+                "ce77fe5.580e7"
+            ]
+        ]
+    },
+    {
+        "id": "d887da7a.7206d8",
+        "type": "function",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "func": "msg.payload=msg.humidity;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 590,
+        "y": 840,
+        "wires": [
+            [
+                "4b98bea3.3084b"
+            ]
+        ]
+    },
+    {
+        "id": "fa17ff76.779a",
+        "type": "function",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "func": "msg.payload=msg.payload.humidity;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1370,
+        "y": 240,
+        "wires": [
+            [
+                "d737e0c6.5d702"
+            ]
+        ]
+    },
+    {
+        "id": "669d5a8f.5e8784",
+        "type": "function",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "func": "msg.payload=msg.payload.temperature;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1370,
+        "y": 320,
+        "wires": [
+            [
+                "644832b4.66bbdc"
+            ]
+        ]
+    },
+    {
+        "id": "4a09af6b.57e84",
+        "type": "smooth",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "action": "mean",
+        "count": "1",
+        "round": "1",
+        "mult": "multi",
+        "x": 1080,
+        "y": 860,
+        "wires": [
+            [
+                "628e2295.38f3fc",
+                "7ada1576.26414c"
+            ]
+        ]
+    },
+    {
+        "id": "a28a6789.3e9bd8",
+        "type": "exec",
+        "z": "c9c7925f.a161e",
+        "command": "puhu ",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "sayIpAddress",
+        "x": 920,
+        "y": 340,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "a476cce4.b3198",
+        "type": "comment",
+        "z": "d52c0666.cf1628",
+        "name": "Other Sensors and stuff to do",
+        "info": "",
+        "x": 940,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "a0840d2b.40e8e",
+        "type": "comment",
+        "z": "d52c0666.cf1628",
+        "name": "RuuviTag Scan and Data handling",
+        "info": "",
+        "x": 840,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "4cbe08e5.fbb308",
+        "type": "inject",
+        "z": "c9c7925f.a161e",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "30",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "x": 230,
+        "y": 500,
+        "wires": [
+            [
+                "2ba5edc4.283da2"
+            ]
+        ]
+    },
+    {
+        "id": "5915b9a6.618398",
+        "type": "function",
+        "z": "c9c7925f.a161e",
+        "name": "modifyString",
+        "func": "msg.payload=msg.payload.split(\".\").join(\" piste \");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 730,
+        "y": 340,
+        "wires": [
+            [
+                "a28a6789.3e9bd8"
+            ]
+        ]
+    },
+    {
+        "id": "1d42401f.e66dc",
+        "type": "function",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "func": "msg.payload=msg.payload.battery/1000;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1370,
+        "y": 160,
+        "wires": [
+            [
+                "b8bc6983.2c9bd8"
+            ]
+        ]
+    },
+    {
+        "id": "b8377c20.0e035",
+        "type": "exec",
+        "z": "c9c7925f.a161e",
+        "command": "/usr/games/fortune ",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "tellMyFortune",
+        "x": 500,
+        "y": 420,
+        "wires": [
+            [
+                "f827fc09.4e676",
+                "717f83f.fed717c"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "33267def.a06112",
+        "type": "exec",
+        "z": "c9c7925f.a161e",
+        "command": "puhu",
+        "addpay": false,
+        "append": "\"Kello on $(sh /home/pi/scripts/raspi/date.sh)\"",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "tellTime",
+        "x": 480,
+        "y": 260,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "decacb76.606148",
+        "type": "function",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "func": "msg.payload=msg.payload.pressure/100;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1370,
+        "y": 400,
+        "wires": [
+            [
+                "e8f90d93.74b27"
+            ]
+        ]
+    },
+    {
+        "id": "e8f90d93.74b27",
+        "type": "switch",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "property": "peripheralUuid",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1510,
+        "y": 400,
+        "wires": [
+            [
+                "4b6a6892.befba8"
+            ],
+            [
+                "58fe33ad.11249c"
+            ]
+        ]
+    },
+    {
+        "id": "644832b4.66bbdc",
+        "type": "switch",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "property": "peripheralUuid",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 2,
+        "x": 1510,
+        "y": 320,
+        "wires": [
+            [
+                "c264737a.35247"
+            ],
+            [
+                "82c08968.f92288"
+            ]
+        ]
+    },
+    {
+        "id": "d737e0c6.5d702",
+        "type": "switch",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "property": "peripheralUuid",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 2,
+        "x": 1510,
+        "y": 240,
+        "wires": [
+            [
+                "4518fc81.1db114"
+            ],
+            [
+                "720f30f0.833c5"
+            ]
+        ]
+    },
+    {
+        "id": "b8bc6983.2c9bd8",
+        "type": "switch",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "property": "peripheralUuid",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 2,
+        "x": 1510,
+        "y": 160,
+        "wires": [
+            [
+                "639b15c5.fa656c"
+            ],
+            [
+                "d0d3c308.653e"
+            ]
+        ]
+    },
+    {
+        "id": "2ba5edc4.283da2",
+        "type": "exec",
+        "z": "c9c7925f.a161e",
+        "command": "sh /home/pi/scripts/raspi/temp.sh",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "getCPUTemp",
+        "x": 490,
+        "y": 500,
+        "wires": [
+            [
+                "14e59664.c22eea"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "c168805b.7fffc",
+        "type": "function",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "func": "msg.payload=msg.payload.temperature;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1310,
+        "y": 780,
+        "wires": [
+            [
+                "7ada1576.26414c"
+            ]
+        ]
+    },
+    {
+        "id": "ad2152d0.4d8f2",
+        "type": "function",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "func": "num = Number(msg.payload.replace(\"\\n\", \"0\"));\nmsg.payload = {};\nmsg.payload.temperature=num;\nmsg.payload.humidity=Number(msg.humidity);\nmsg.payload.topic = msg.topic;\ndelete msg.humidity;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 590,
+        "y": 780,
+        "wires": [
+            [
+                "cfae02b.316a8",
+                "c168805b.7fffc",
+                "cce11362.f87fb"
+            ]
+        ]
+    },
+    {
+        "id": "f2b5ca11.a9a668",
+        "type": "influxdb out",
+        "z": "d52c0666.cf1628",
+        "influxdb": "58280a67.bd0ae4",
+        "name": "SendRuuviData",
+        "measurement": "",
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 1140,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "cfae02b.316a8",
+        "type": "influxdb out",
+        "z": "d52c0666.cf1628",
+        "influxdb": "58280a67.bd0ae4",
+        "name": "SendSensorData",
+        "measurement": "",
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 1470,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "509dff4.87d09",
+        "type": "exec",
+        "z": "d52c0666.cf1628",
+        "command": "python /home/pi/codes/thermocouple/readSensor.py",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 520,
+        "y": 1140,
+        "wires": [
+            [
+                "4360dd74.99c404"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "1d24265d.59c36a",
+        "type": "function",
+        "z": "d52c0666.cf1628",
+        "name": "Device naming",
+        "func": "num = Number(msg.payload);\nmsg.payload = {};\nmsg.payload.temperature=num;\nmsg.payload.topic = msg.topic;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 580,
+        "y": 980,
+        "wires": [
+            [
+                "20114a6f.de2fe6",
+                "cfae02b.316a8"
+            ]
+        ]
+    },
+    {
+        "id": "20114a6f.de2fe6",
+        "type": "switch",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 750,
+        "y": 940,
+        "wires": [
+            [
+                "998410a1.8dc13",
+                "b561b04c.3118b",
+                "e209567d.7b5b68"
+            ],
+            [
+                "b561b04c.3118b",
+                "15e40382.4bc7cc",
+                "b73bc06f.56868"
+            ]
+        ]
+    },
+    {
+        "id": "4360dd74.99c404",
+        "type": "function",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "func": "num = Number(msg.payload.replace(\"\\n\", \"0\"));\nmsg.payload = {};\nmsg.payload.temperature=num;\nmsg.payload.topic = \"Thermocouple_1\";\nmsg.topic = msg.payload.topic;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 910,
+        "y": 1140,
+        "wires": [
+            [
+                "cfae02b.316a8",
+                "c168805b.7fffc",
+                "69c28ad8.ef7b74",
+                "10d93c49.1a9eb4"
+            ]
+        ]
+    },
+    {
+        "id": "616f4c74.36a594",
+        "type": "exec",
+        "z": "d52c0666.cf1628",
+        "command": "/home/pi/codes/ultrasonic/waterLevel.out 26 4",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 500,
+        "y": 1200,
+        "wires": [
+            [
+                "b29b5f59.0078"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b29b5f59.0078",
+        "type": "function",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "func": "num = Number(msg.payload.replace(\"\\n\", \"0\"));\nmsg.payload = {};\nmsg.payload.distance=num;\nmsg.payload.topic = \"Water_level\";\ndelete msg.topic;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 910,
+        "y": 1200,
+        "wires": [
+            [
+                "929af4bf.5a4918"
+            ]
+        ]
+    },
+    {
+        "id": "c39a155b.19e2c8",
+        "type": "comment",
+        "z": "c9c7925f.a161e",
+        "name": "Scripts and other things",
+        "info": "",
+        "x": 640,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a773e1cc.36d7",
+        "type": "influxdb out",
+        "z": "c9c7925f.a161e",
+        "influxdb": "58280a67.bd0ae4",
+        "name": "SendCPUData",
+        "measurement": "",
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 920,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "14e59664.c22eea",
+        "type": "function",
+        "z": "c9c7925f.a161e",
+        "name": "naming",
+        "func": "num = Number(msg.payload);\nmsg.payload = {};\nmsg.topic = \"cpu_temp\"\nmsg.payload.topic = msg.topic;\nmsg.payload.temperature=num;\ndelete msg.topic;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 720,
+        "y": 520,
+        "wires": [
+            [
+                "a773e1cc.36d7",
+                "4531f2e4.bd439c"
+            ]
+        ]
+    },
+    {
+        "id": "b561b04c.3118b",
+        "type": "function",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "func": "msg.payload = msg.payload.temperature;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 910,
+        "y": 920,
+        "wires": [
+            [
+                "4a09af6b.57e84"
+            ]
+        ]
+    },
+    {
+        "id": "ee448a57.afb248",
+        "type": "inject",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "180",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "x": 170,
+        "y": 820,
+        "wires": [
+            [
+                "6c33c661.2d1f68"
+            ]
+        ]
+    },
+    {
+        "id": "93461cce.95",
+        "type": "rpi-gpio in",
+        "z": "c9c7925f.a161e",
+        "name": "",
+        "pin": "12",
+        "intype": "down",
+        "debounce": "25",
+        "read": false,
+        "x": 220,
+        "y": 660,
+        "wires": [
+            [
+                "aad56acf.8f4508"
+            ]
+        ]
+    },
+    {
+        "id": "598c1689.82d478",
+        "type": "exec",
+        "z": "c9c7925f.a161e",
+        "command": "bash /home/pi/scripts/snips/setMicState.sh",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "setMicState",
+        "x": 490,
+        "y": 660,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "aad56acf.8f4508",
+        "type": "switch",
+        "z": "c9c7925f.a161e",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 1,
+        "x": 350,
+        "y": 660,
+        "wires": [
+            [
+                "598c1689.82d478"
+            ]
+        ]
+    },
+    {
+        "id": "69c28ad8.ef7b74",
+        "type": "function",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "func": "msg.payload = msg.payload.temperature;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1170,
+        "y": 1100,
+        "wires": [
+            [
+                "81a172fd.d4881"
+            ]
+        ]
+    },
+    {
+        "id": "cb75129.28df4f",
+        "type": "ui_button",
+        "z": "c9c7925f.a161e",
+        "name": "",
+        "group": "4655c9da.0276a8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "IP Address",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "",
+        "x": 210,
+        "y": 340,
+        "wires": [
+            [
+                "c47ef78f.c5f608"
+            ]
+        ]
+    },
+    {
+        "id": "1c4f4107.845c9f",
+        "type": "ui_button",
+        "z": "c9c7925f.a161e",
+        "name": "",
+        "group": "4655c9da.0276a8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Me telleth thy Fortuneth!",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "",
+        "x": 250,
+        "y": 420,
+        "wires": [
+            [
+                "b8377c20.0e035"
+            ]
+        ]
+    },
+    {
+        "id": "85789d14.bea48",
+        "type": "ui_button",
+        "z": "c9c7925f.a161e",
+        "name": "",
+        "group": "4655c9da.0276a8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Time",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "",
+        "x": 190,
+        "y": 260,
+        "wires": [
+            [
+                "33267def.a06112"
+            ]
+        ]
+    },
+    {
+        "id": "ce77fe5.580e7",
+        "type": "ui_gauge",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "group": "c95734e1.969f48",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "gtype": "wave",
+        "title": "Left wall, lower",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "85",
+        "seg2": "125",
+        "x": 760,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "4b98bea3.3084b",
+        "type": "ui_gauge",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "group": "c95734e1.969f48",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Left wall, lower",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "85",
+        "seg2": "125",
+        "x": 760,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "998410a1.8dc13",
+        "type": "ui_gauge",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "group": "11988d40.af8303",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Left wall, lower",
+        "label": "°C",
+        "format": "{{msg.payload.temperature}}",
+        "min": "0",
+        "max": "150",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 940,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "4518fc81.1db114",
+        "type": "ui_gauge",
+        "z": "d52c0666.cf1628",
+        "name": "Humidity",
+        "group": "d2b01fcb.31cba",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1680,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "82c08968.f92288",
+        "type": "ui_gauge",
+        "z": "d52c0666.cf1628",
+        "name": "Temperature",
+        "group": "b1e2b92c.b1c858",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "",
+        "label": "",
+        "format": "{{value | number:1}}°C",
+        "min": "-30",
+        "max": "85",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "x": 1690,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "639b15c5.fa656c",
+        "type": "ui_gauge",
+        "z": "d52c0666.cf1628",
+        "name": "Battery",
+        "group": "d2b01fcb.31cba",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Volts",
+        "label": "",
+        "format": "{{value | number:2}}",
+        "min": 0,
+        "max": "3.3",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1680,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "720f30f0.833c5",
+        "type": "ui_gauge",
+        "z": "d52c0666.cf1628",
+        "name": "Humidity",
+        "group": "b1e2b92c.b1c858",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1680,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c264737a.35247",
+        "type": "ui_gauge",
+        "z": "d52c0666.cf1628",
+        "name": "Temperature",
+        "group": "d2b01fcb.31cba",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "",
+        "label": "",
+        "format": "{{value | number:1}}°C",
+        "min": "-30",
+        "max": "85",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "x": 1690,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "d0d3c308.653e",
+        "type": "ui_gauge",
+        "z": "d52c0666.cf1628",
+        "name": "Battery",
+        "group": "b1e2b92c.b1c858",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Volts",
+        "label": "",
+        "format": "{{value | number:2}}",
+        "min": 0,
+        "max": "3.3",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1680,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "58fe33ad.11249c",
+        "type": "ui_gauge",
+        "z": "d52c0666.cf1628",
+        "name": "Pressure",
+        "group": "b1e2b92c.b1c858",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "",
+        "label": "hPa",
+        "format": "{{value}}",
+        "min": "800",
+        "max": "1100",
+        "colors": [
+            "#ffffff",
+            "#ffffff",
+            "#ffffff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1680,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "4b6a6892.befba8",
+        "type": "ui_gauge",
+        "z": "d52c0666.cf1628",
+        "name": "Pressure",
+        "group": "d2b01fcb.31cba",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "",
+        "label": "hPa",
+        "format": "{{value}}",
+        "min": "800",
+        "max": "1100",
+        "colors": [
+            "#ffffff",
+            "#ffffff",
+            "#ffffff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1680,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "4dc45945.cbcd78",
+        "type": "ui_gauge",
+        "z": "d52c0666.cf1628",
+        "name": "Water level",
+        "group": "a2ee02de.bd307",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "",
+        "label": "litre",
+        "format": "{{ msg.payload.distance }}",
+        "min": "0",
+        "max": "200",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "30",
+        "seg2": "100",
+        "x": 1450,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "81a172fd.d4881",
+        "type": "ui_gauge",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "group": "dda8748a.0bd338",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Roof, above stove",
+        "label": "",
+        "format": "{{value | number:1}} °C",
+        "min": "0",
+        "max": "500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "100",
+        "seg2": "180",
+        "x": 1470,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "7ada1576.26414c",
+        "type": "ui_chart",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "group": "3f5ef979.504166",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "label": "Sensor Temperatures",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 1620,
+        "y": 780,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "f827fc09.4e676",
+        "type": "ui_toast",
+        "z": "c9c7925f.a161e",
+        "position": "top right",
+        "displayTime": "10",
+        "highlight": "",
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "",
+        "name": "",
+        "x": 750,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "c47ef78f.c5f608",
+        "type": "exec",
+        "z": "c9c7925f.a161e",
+        "command": "hostname -I | cut -d ' ' -f 1 ",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "getIpAddress",
+        "x": 490,
+        "y": 340,
+        "wires": [
+            [
+                "5915b9a6.618398"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "23ee1f6d.4c22f",
+        "type": "influxdb out",
+        "z": "d52c0666.cf1628",
+        "influxdb": "58280a67.bd0ae4",
+        "name": "sendIpData",
+        "measurement": "",
+        "precision": "",
+        "retentionPolicy": "",
+        "x": 350,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "6c33c661.2d1f68",
+        "type": "hostip",
+        "z": "d52c0666.cf1628",
+        "name": "Host IP",
+        "x": 160,
+        "y": 760,
+        "wires": [
+            [
+                "a67b673a.4cfc08"
+            ]
+        ]
+    },
+    {
+        "id": "a67b673a.4cfc08",
+        "type": "function",
+        "z": "d52c0666.cf1628",
+        "name": "getIp",
+        "func": "a = msg.payload;\nmsg.payload = {};\nmsg.payload.address = a[0].address;\nmsg.topic = \"ip\";\nmsg.payload.topic = msg.topic;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 150,
+        "y": 680,
+        "wires": [
+            [
+                "23ee1f6d.4c22f"
+            ]
+        ]
+    },
+    {
+        "id": "beb86b12.d8e038",
+        "type": "rpi-dht22",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "topic": "DHT22_1",
+        "dht": 22,
+        "pintype": "0",
+        "pin": "17",
+        "x": 400,
+        "y": 760,
+        "wires": [
+            [
+                "d4597a45.b427d8",
+                "ad2152d0.4d8f2"
+            ]
+        ]
+    },
+    {
+        "id": "9f001eef.a7667",
+        "type": "rpi-dht22",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "topic": "DHT22_2",
+        "dht": 22,
+        "pintype": "0",
+        "pin": "27",
+        "x": 400,
+        "y": 800,
+        "wires": [
+            [
+                "d887da7a.7206d8",
+                "ad2152d0.4d8f2"
+            ]
+        ]
+    },
+    {
+        "id": "6984ecb0.da4d34",
+        "type": "scan ble",
+        "z": "d52c0666.cf1628",
+        "uuids": "",
+        "duplicates": false,
+        "name": "scanRuuviTags",
+        "x": 880,
+        "y": 140,
+        "wires": [
+            [
+                "6e2bfc07.0fdd44",
+                "d3a7edc1.5847f"
+            ]
+        ]
+    },
+    {
+        "id": "8e11ba9d.52ded8",
+        "type": "inject",
+        "z": "d52c0666.cf1628",
+        "name": "inject",
+        "topic": "",
+        "payload": "{ \"scan\": false }",
+        "payloadType": "json",
+        "repeat": "30",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 550,
+        "y": 140,
+        "wires": [
+            [
+                "b98060cf.5f7bc"
+            ]
+        ]
+    },
+    {
+        "id": "b98060cf.5f7bc",
+        "type": "trigger",
+        "z": "d52c0666.cf1628",
+        "op1": "{ \"scan\": true }",
+        "op2": "{ \"scan\": false }",
+        "op1type": "json",
+        "op2type": "json",
+        "duration": "5",
+        "extend": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "name": "onAndOff",
+        "x": 700,
+        "y": 140,
+        "wires": [
+            [
+                "6984ecb0.da4d34"
+            ]
+        ]
+    },
+    {
+        "id": "c09c2ae3.134698",
+        "type": "mqtt out",
+        "z": "d52c0666.cf1628",
+        "name": "dht22_1",
+        "topic": "sensors/humidity/dht22_1",
+        "qos": "",
+        "retain": "",
+        "broker": "96fb7390.97b12",
+        "x": 1040,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "cce11362.f87fb",
+        "type": "switch",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "DHT22_1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "DHT22_2",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 890,
+        "y": 740,
+        "wires": [
+            [
+                "c09c2ae3.134698"
+            ],
+            [
+                "6d9a2a37.956e34"
+            ]
+        ]
+    },
+    {
+        "id": "6d9a2a37.956e34",
+        "type": "mqtt out",
+        "z": "d52c0666.cf1628",
+        "name": "dht22_2",
+        "topic": "sensors/humidity/dht22_2",
+        "qos": "",
+        "retain": "",
+        "broker": "96fb7390.97b12",
+        "x": 1040,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "a5407f3b.693ec",
+        "type": "mqtt out",
+        "z": "d52c0666.cf1628",
+        "name": "ds18b20_1",
+        "topic": "sensors/temperature/ds18b20_1",
+        "qos": "",
+        "retain": "",
+        "broker": "96fb7390.97b12",
+        "x": 1590,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "628e2295.38f3fc",
+        "type": "switch",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1430,
+        "y": 860,
+        "wires": [
+            [
+                "a5407f3b.693ec"
+            ],
+            [
+                "af1b6813.7d2998"
+            ]
+        ]
+    },
+    {
+        "id": "af1b6813.7d2998",
+        "type": "mqtt out",
+        "z": "d52c0666.cf1628",
+        "name": "ds18b20_2",
+        "topic": "sensors/temperature/ds18b20_2",
+        "qos": "",
+        "retain": "",
+        "broker": "96fb7390.97b12",
+        "x": 1590,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "f44da1f5.fad4e",
+        "type": "switch",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "property": "peripheralUuid",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1510,
+        "y": 500,
+        "wires": [
+            [
+                "fefcf8a8.db4548"
+            ],
+            [
+                "2dd74bac.661334"
+            ]
+        ]
+    },
+    {
+        "id": "fefcf8a8.db4548",
+        "type": "mqtt out",
+        "z": "d52c0666.cf1628",
+        "name": "ruuvi_b",
+        "topic": "sensors/ruuvitag/ruuvi_b",
+        "qos": "",
+        "retain": "",
+        "broker": "96fb7390.97b12",
+        "x": 1680,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "2dd74bac.661334",
+        "type": "mqtt out",
+        "z": "d52c0666.cf1628",
+        "name": "ruuvi_c",
+        "topic": "sensors/ruuvitag/ruuvi_c",
+        "qos": "",
+        "retain": "",
+        "broker": "96fb7390.97b12",
+        "x": 1680,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "10d93c49.1a9eb4",
+        "type": "mqtt out",
+        "z": "d52c0666.cf1628",
+        "name": "thermocouple",
+        "topic": "sensors/temperature/thermocouple",
+        "qos": "",
+        "retain": "",
+        "broker": "96fb7390.97b12",
+        "x": 1460,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "f7d3661.5830b98",
+        "type": "mqtt out",
+        "z": "d52c0666.cf1628",
+        "name": "water_level",
+        "topic": "sensors/distance/water_level",
+        "qos": "",
+        "retain": "",
+        "broker": "96fb7390.97b12",
+        "x": 1450,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "2c83bf8a.2b397",
+        "type": "function",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "func": "if (msg.payload.accelerationZ >= 1500 || msg.payload.accelerationZ <= 500) {\n    msg.payload.accelerationZ = \"Yes!\"\n}\nif (msg.payload.accelerationY >= 500 || msg.payload.accelerationY <= -500) {\n    msg.payload.accelerationZ = \"Yes!\"\n}\nif (msg.payload.accelerationX >= 500 || msg.payload.accelerationX <= -500) {\n    msg.payload.accelerationZ = \"Yes!\"\n}\nelse {\n    msg.payload.accelerationZ = \"No\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1370,
+        "y": 500,
+        "wires": [
+            [
+                "f44da1f5.fad4e"
+            ]
+        ]
+    },
+    {
+        "id": "929af4bf.5a4918",
+        "type": "function",
+        "z": "d52c0666.cf1628",
+        "name": "toLitres",
+        "func": "msg.payload.distance = 200 - 2*(msg.payload.distance);\nmsg.payload.distance = msg.payload.distance.toFixed(2);\nn = parseFloat(msg.payload.distance);\nmsg.payload.distance = n;\nif (msg.payload.distance <= 0){\n    msg.payload.distance = 0;\n}\nelse if (msg.payload.distance >= 200){\n    msg.payload.distance = 200;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1180,
+        "y": 1200,
+        "wires": [
+            [
+                "4dc45945.cbcd78",
+                "cfae02b.316a8",
+                "f7d3661.5830b98"
+            ]
+        ]
+    },
+    {
+        "id": "ee962018.c4e19",
+        "type": "openweathermap",
+        "z": "a202612d.e90ab",
+        "name": "",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "",
+        "country": "",
+        "language": "fi",
+        "x": 420,
+        "y": 240,
+        "wires": [
+            [
+                "82b0ea7e.46cd58"
+            ]
+        ]
+    },
+    {
+        "id": "784e2b53.f6d4e4",
+        "type": "inject",
+        "z": "a202612d.e90ab",
+        "name": "inject",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "300",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "x": 210,
+        "y": 240,
+        "wires": [
+            [
+                "ee962018.c4e19"
+            ]
+        ]
+    },
+    {
+        "id": "874b19f1.a06338",
+        "type": "mqtt out",
+        "z": "a202612d.e90ab",
+        "name": "localWeather",
+        "topic": "sensors/weather/localWeather",
+        "qos": "",
+        "retain": "",
+        "broker": "96fb7390.97b12",
+        "x": 890,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "c8dd68d5.044cf8",
+        "type": "comment",
+        "z": "a202612d.e90ab",
+        "name": "OpenWeatherMap weather forecast",
+        "info": "",
+        "x": 540,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "df86820f.3545",
+        "type": "inject",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "30",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "x": 170,
+        "y": 620,
+        "wires": [
+            [
+                "a55366df.57fb08"
+            ]
+        ]
+    },
+    {
+        "id": "a55366df.57fb08",
+        "type": "hostip",
+        "z": "d52c0666.cf1628",
+        "name": "Host IP",
+        "x": 340,
+        "y": 620,
+        "wires": [
+            [
+                "1af2a6a3.ee7e69"
+            ]
+        ]
+    },
+    {
+        "id": "1af2a6a3.ee7e69",
+        "type": "function",
+        "z": "d52c0666.cf1628",
+        "name": "getIp",
+        "func": "a = msg.payload;\nmsg.payload = {};\nmsg.payload.value = a[0].address;\nmsg.topic = \"ip\";\nmsg.payload.topic = msg.topic;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 490,
+        "y": 620,
+        "wires": [
+            [
+                "6f7e5605.655328"
+            ]
+        ]
+    },
+    {
+        "id": "6f7e5605.655328",
+        "type": "mqtt out",
+        "z": "d52c0666.cf1628",
+        "name": "ipAddress",
+        "topic": "sensors/address/ip",
+        "qos": "",
+        "retain": "",
+        "broker": "96fb7390.97b12",
+        "x": 640,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "d3a7edc1.5847f",
+        "type": "stoptimer",
+        "z": "d52c0666.cf1628",
+        "duration": "10",
+        "units": "Minute",
+        "payloadtype": "num",
+        "payloadval": "1",
+        "name": "",
+        "x": 880,
+        "y": 220,
+        "wires": [
+            [],
+            [
+                "d1337c4e.712fa"
+            ]
+        ]
+    },
+    {
+        "id": "eff0768d.4388d8",
+        "type": "exec",
+        "z": "d52c0666.cf1628",
+        "command": "bash /home/pi/scripts/raspi/autoRedeploy.sh",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "autoRedeploy",
+        "x": 880,
+        "y": 380,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "d1337c4e.712fa",
+        "type": "switch",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 850,
+        "y": 300,
+        "wires": [
+            [
+                "eff0768d.4388d8"
+            ]
+        ]
+    },
+    {
+        "id": "15e40382.4bc7cc",
+        "type": "ui_gauge",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "group": "b9cd5646.956cf8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Left wall, upper",
+        "label": "°C",
+        "format": "{{msg.payload.temperature | number:1 }}",
+        "min": "0",
+        "max": "150",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "85",
+        "seg2": "125",
+        "x": 940,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "82b0ea7e.46cd58",
+        "type": "function",
+        "z": "a202612d.e90ab",
+        "name": "modifyTimestamp",
+        "func": "msg.payload.time = {};\nvar date = new Date(msg.data.dt*1000);\nvar hour = date.getHours();\nvar minute = \"0\" + date.getMinutes();\nmsg.payload.time = hour + ':' + minute.substr(-2);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 670,
+        "y": 240,
+        "wires": [
+            [
+                "874b19f1.a06338"
+            ]
+        ]
+    },
+    {
+        "id": "b73bc06f.56868",
+        "type": "ui_text",
+        "z": "d52c0666.cf1628",
+        "group": "b9cd5646.956cf8",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "Temperature",
+        "format": "{{msg.payload.temperature | number:1 }} °C",
+        "layout": "col-center",
+        "x": 930,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "e209567d.7b5b68",
+        "type": "ui_gauge",
+        "z": "d52c0666.cf1628",
+        "name": "",
+        "group": "4655c9da.0276a8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Gauge",
+        "label": "asd",
+        "format": "{{msg.payload.temperature }}",
+        "min": 0,
+        "max": "150",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 910,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "717f83f.fed717c",
+        "type": "exec",
+        "z": "c9c7925f.a161e",
+        "command": "puhu \"",
+        "addpay": true,
+        "append": "\"",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 710,
+        "y": 460,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "78b57e81.4fc1a",
+        "type": "rpi-gpio in",
+        "z": "c9c7925f.a161e",
+        "name": "",
+        "pin": "24",
+        "intype": "down",
+        "debounce": "25",
+        "read": false,
+        "x": 220,
+        "y": 740,
+        "wires": [
+            [
+                "822ac26.68f554"
+            ]
+        ]
+    },
+    {
+        "id": "d0e0eea7.ffcf8",
+        "type": "exec",
+        "z": "c9c7925f.a161e",
+        "command": "bash /home/pi/scripts/raspi/reConnectInternet.sh",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "reConnectToNetwork",
+        "x": 520,
+        "y": 580,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4531f2e4.bd439c",
+        "type": "mqtt out",
+        "z": "c9c7925f.a161e",
+        "name": "cpuTemp",
+        "topic": "sensors/cpu/temp",
+        "qos": "",
+        "retain": "",
+        "broker": "96fb7390.97b12",
+        "x": 900,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "5024b89.a025948",
+        "type": "inject",
+        "z": "c9c7925f.a161e",
+        "name": "pingGoogle",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 230,
+        "y": 580,
+        "wires": [
+            [
+                "d0e0eea7.ffcf8"
+            ]
+        ]
+    },
+    {
+        "id": "822ac26.68f554",
+        "type": "exec",
+        "z": "c9c7925f.a161e",
+        "command": "gpio toggle 29",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "throwWater",
+        "x": 490,
+        "y": 740,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b30359a2.c0e1e8",
+        "type": "switch",
+        "z": "d52c0666.cf1628",
+        "name": "allowedMACs",
+        "property": "peripheralUuid",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1140,
+        "y": 220,
+        "wires": [
+            [
+                "ca2aec3f.13508"
+            ],
+            [
+                "ca2aec3f.13508"
+            ]
+        ]
+    }
+]
