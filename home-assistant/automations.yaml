@@ -1,0 +1,39 @@
+- action:
+  - delay: 00:00:03
+  - data:
+      entity_id: switch.water_pump
+    service: switch.turn_off
+  alias: waterAutoOFF
+  condition: []
+  id: '1521478670475'
+  trigger:
+  - entity_id: switch.water_pump
+    from: 'off'
+    platform: state
+    to: 'on'
+- id: '1521795818806'
+  alias: isMySaunaBeingStolen
+  trigger:
+  - entity_id: sensor.acceleration
+    from: 'No'
+    platform: state
+    to: Yes!
+  condition: []
+  action:
+  - alias: ''
+    data:
+      puhu: Saunavaras
+    service: shell_command.puhu
+  - delay: 00:00:05
+- id: '1526389101608'
+  alias: cpuTempAlert
+  trigger:
+  - above: '90'
+    entity_id: sensor.cpu_temp
+    platform: numeric_state
+  condition: []
+  action:
+  - alias: ''
+    data:
+      puhu: ceepeeuun lämpötila on korkea, suositellaan toimenpiteitä.
+    service: shell_command.puhu

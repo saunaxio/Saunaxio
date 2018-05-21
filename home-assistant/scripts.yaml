@@ -1,0 +1,19 @@
+restart_snips:
+  sequence:
+  - data: {}
+    service: shell_command.snips_restart
+
+restart_mopidy:
+  sequence:
+  - data: {}
+    service: shell_command.mopidy_restart
+
+restart_nodered:
+  sequence:
+  - data: {}
+    service: shell_command.nodered_restart
+
+restart_networking:
+  sequence:
+  - data: {}
+    service: shell_command.networking_restart

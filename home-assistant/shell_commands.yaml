@@ -1,0 +1,9 @@
+puhu: puhu {{ puhu }}
+
+snips_restart: '/bin/bash /home/pi/scripts/snips/startSnipsServices.sh'
+
+mopidy_restart: '/bin/bash /home/pi/scripts/audio/restartMopidy.sh'
+
+nodered_restart: '/bin/bash /home/pi/scripts/raspi/restartNodered.sh'
+
+networking_restart: '/bin/bash /home/pi/scripts/raspi/restartNetworking.sh'

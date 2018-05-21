@@ -1,0 +1,101 @@
+## Intent scripts for Home Assistant and Snips AI
+
+lightsTurnOnSet:
+  action:
+    service: switch.turn_on
+    data_template:
+      entity_id: switch.light_1, switch.light_2
+
+lightsTurnOff:
+  action:
+    service: switch.turn_off
+    data_template:      
+      entity_id: switch.light_1, switch.light_2
+
+getTemperature:
+  action:
+    service: shell_command.puhu
+    data_template: 
+      puhu: "Lämpötila on {{ states('sensor.average_temp') }} astetta."
+
+getHumidity:
+  action:
+    service: shell_command.puhu
+    data_template: 
+      puhu: "Suhteellinen kosteus on {{ states('sensor.average_hum') }} %a."
+
+TellTimeDate:
+  action:
+    service: shell_command.puhu
+    data_template:
+      puhu: "Kello on {{ states('sensor.time') | replace(\":\",\" \") }}."
+
+throwWater:
+  action:
+    service: switch.turn_on
+    data_template:
+      entity_id: switch.water_pump
+
+waterLevel:
+  action:
+    service: shell_command.puhu
+    data_template:
+      puhu: "Vettä on {{ states('sensor.water_level') | int }} litraa."
+
+playPlaylist:
+  action:
+    service: media_player.select_source
+    data:
+      entity_id: media_player.mpd
+      source: '{{ playlist_name }}'  
+
+speakerInterrupt:
+  action:
+    service: media_player.media_pause
+    data_template:
+      entity_id: media_player.mpd
+
+resumeMusic:
+  action:
+    service: media_player.media_play
+    data_template:
+      entity_id: media_player.mpd
+ 
+nextSong:
+  action:
+    service: media_player.media_next_track
+    data_template:
+      entity_id: media_player.mpd
+
+previousSong:
+  action:
+    service: media_player.media_previous_track
+    data_template:
+      entity_id: media_player.mpd
+
+volumeUp:
+  action:
+    service: media_player.volume_up
+    data_template:
+      entity_id: media_player.mpd
+
+volumeDown:
+  action:
+    service: media_player.volume_down
+    data_template:
+      entity_id: media_player.mpd
+
+getIpAddress:
+  action:
+    service: shell_command.puhu
+    data_template:
+      puhu: "Iipee osoitteeni on {{ states('sensor.ip_address') | replace(\":\",\" piste \") }}"
+      
+searchWeatherForecast:
+  action:
+    service: shell_command.puhu
+    data_template: 
+      puhu: "Havainto kohteesta {{states('sensor.location')}} kello {{states('sensor.forecasttime') | replace(\":\",\" \") }}: {{states('sensor.detail')}},
+             lämpötila on {{states('sensor.tempc')}} astetta ja suhteellinen kosteus {{states('sensor.humidity')}} %a. 
+             Ilmanpaine on {{states('sensor.pressure')}} millibaaria ja tuulen nopeus noin {{states('sensor.windspeed')}} metriä sekunnissa suunnasta 
+             {{states('sensor.winddirection')}} astetta."

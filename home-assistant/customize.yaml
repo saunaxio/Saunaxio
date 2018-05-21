@@ -1,0 +1,173 @@
+group.all_switches:
+  auto: true
+  friendly_name: Switches
+switch.water_pump:
+  icon: mdi:water-pump
+  show_last_changed: true
+switch.light_1:
+  icon: mdi:lamp
+  show_last_changed: true
+switch.light_2:
+  icon: mdi:lamp
+  show_last_changed: true
+sensor.water_level:
+  friendly_name: Water level
+  icon: mdi:water
+sensor.thermocouple:
+  friendly_name: Roof above stove
+  icon: mdi:thermometer
+  unit_of_measurement: °C
+sensor.ds18b20_1:
+  friendly_name: Lower temperature
+  icon: mdi:thermometer
+  unit_of_measurement: °C
+sensor.ds18b20_2:
+  friendly_name: Upper temperature
+  icon: mdi:thermometer
+  unit_of_measurement: ' °C'
+sensor.ruuvi_air_battery:
+  friendly_name: Battery
+  icon: mdi:battery
+sensor.ruuvi_air_hum:
+  friendly_name: Humidity
+  icon: mdi:water-percent
+sensor.ruuvi_roof_hum:
+  friendly_name: Humidity
+  icon: mdi:water-percent
+sensor.ruuvi_air_pressure:
+  friendly_name: Air pressure
+  icon: mdi:weight
+sensor.ruuvi_air_temp:
+  friendly_name: Temperature
+  icon: mdi:thermometer
+  unit_of_measurement: °C
+sensor.ruuvi_roof_battery:
+  friendly_name: Battery
+  icon: mdi:battery
+sensor.ruuvi_roof_pressure:
+  friendly_name: Air pressure
+  icon: mdi:weight
+sensor.ruuvi_roof_temp:
+  friendly_name: Temperature
+  icon: mdi:thermometer
+  unit_of_measurement: °C
+sensor.acceleration:
+  friendly_name: Is my sauna being stolen?
+  icon: mdi:truck-trailer
+group.temperature:
+  unit_of_measurement: °C
+sensor.dht22_1_hum:
+  friendly_name: Lower humidity
+  icon: mdi:water-percent
+sensor.dht22_2_hum:
+  friendly_name: Upper humidity
+  icon: mdi:water-percent
+sensor.dht22_1_temp:
+  friendly_name: Floor temperature
+  icon: mdi:thermometer
+  unit_of_measurement: °C
+sensor.dht22_2_temp:
+  friendly_name: Laude temperature
+  icon: mdi:thermometer
+  unit_of_measurement: °C
+group.timedate: {}
+sensor.location:
+  friendly_name: Location
+  icon: mdi:map-marker
+sensor.detail:
+  friendly_name: Weather type
+  icon: mdi:checkbox-blank-circle-outline
+sensor.humidity:
+  friendly_name: Humidity
+  icon: mdi:water-percent
+  unit_of_measurement: ' %'
+sensor.pressure:
+  friendly_name: Air pressure
+  icon: mdi:weight
+sensor.tempc:
+  friendly_name: Temperature
+  icon: mdi:thermometer
+  unit_of_measurement: °C
+sensor.winddirection:
+  friendly_name: Wind direction
+  icon: mdi:weather-windy
+  unit_of_measurement: °
+sensor.windspeed:
+  friendly_name: Windspeed
+  icon: mdi:speedometer
+media_player.mpd:
+  icon: mdi:music
+sensor.forecasttime:
+  friendly_name: Time of forecast
+  icon: mdi:clock-outline
+sensor.avg_temp:
+  friendly_name: Average temperature
+  icon: mdi:tilde
+  unit_of_measurement: °C
+sensor.average_temp:
+  friendly_name: Average temperature
+  icon: mdi:thermometer
+sensor.average_hum:
+  friendly_name: Average humidity
+  icon: mdi:water-percent
+  unit_of_measurement: ' %'
+sensor.ip_address:
+  friendly_name: IP
+  icon: mdi:ghost
+sensor.pump_active:
+  friendly_name: Pump last active
+  icon: mdi:clock
+sensor.mopidy_address:
+  friendly_name: Mopidy
+  icon: mdi:music
+group.mpd: {}
+sensor.ipv4_address_enxb827eb325527:
+  friendly_name: IPv4 eth0
+sensor.ipv4_address_wlan0:
+  friendly_name: IPv4 wlan0
+script.speed_test:
+  friendly_name: Speedtest
+sensor.owm_cloud_coverage:
+  friendly_name: Cloud coverage
+  icon: mdi:cloud
+sensor.owm_condition:
+  friendly_name: Weather conditions
+  icon: mdi:weather-sunny
+sensor.owm_humidity:
+  friendly_name: Humidity
+  icon: mdi:water-percent
+sensor.owm_pressure:
+  friendly_name: Air pressure
+  icon: mdi:weight
+  unit_of_measurement: hPa
+sensor.owm_rain:
+  friendly_name: Rain
+  icon: mdi:weather-rainy
+sensor.owm_snow:
+  friendly_name: Snow
+  icon: mdi:weather-snowy
+sensor.weather:
+  friendly_name: Weather type
+  icon: mdi:weather-sunny
+input_number.slider_temperature:
+  unit_of_measurement: °C
+input_number.slider_humidity:
+  unit_of_measurement: '%'
+sensor.cpu_temp:
+  friendly_name: CPU temperature
+  icon: mdi:oil-temperature
+  unit_of_measurement: °C
+script.restart_snips:
+  friendly_name: Restart JARVIS
+  icon: mdi:robot
+input_number.water_level_warning:
+  unit_of_measurement: L
+script.restart_mopidy:
+  friendly_name: Restart Mopidy
+  icon: mdi:music-note
+script.restart_networking:
+  friendly_name: Restart networking
+  icon: mdi:network
+script.restart_nodered:
+  friendly_name: Restart Node-RED
+  icon: mdi:washing-machine

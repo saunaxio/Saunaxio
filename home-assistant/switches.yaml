@@ -1,0 +1,13 @@
+## Switches of a relay board
+- platform: rpi_gpio
+  scan_interval: 10
+  invert_logic: true
+  ports:
+    16: Light 1
+    20: Light 2
+    21: Water Pump
+    26: Relay 4
+    19: Relay 5
+    13: Relay 6
+    6: Relay 7
+    5: Relay 8

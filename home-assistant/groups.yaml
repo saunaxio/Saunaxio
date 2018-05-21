@@ -1,0 +1,145 @@
+## Views
+
+default_view:
+  view: yes
+  icon: mdi:home
+  entities:
+    - group.timedate
+    - group.temperature
+    - group.humidity
+    - group.water
+    - group.ruuvitag_1
+    - group.ruuvitag_2
+    - group.motion
+    - group.average
+    - group.mpd
+
+switches:
+  view: yes
+  icon: mdi:power
+  entities:
+    - group.lights
+    - group.pump
+
+weather:
+  view: yes
+  icon: mdi:weather-sunny
+  entities:
+    - group.local
+
+connections:
+  view: yes
+  icon: mdi:raspberrypi
+  entities:
+    - group.system
+    - group.network
+    - group.services
+
+###########################
+
+## Groups
+
+average:
+  name: Average values
+  entities:
+    - sensor.average_temp
+    - input_number.slider_temperature
+    - sensor.average_hum
+    - input_number.slider_humidity
+
+mpd:
+  name: Mopidy Music Player
+  entities:
+    - music_player.mpd
+
+motion:
+  name: Motion
+  entities:
+    - sensor.acceleration
+water:
+  name: Water
+  entities:
+    - sensor.water_level
+
+pump:
+  name: Water Pump
+  entities:
+    - switch.water_pump
+    - sensor.water_level
+    - input_number.water_level_warning
+
+lights:
+  name: Lights
+  entities:
+    - switch.light_1
+    - switch.light_2
+
+temperature:
+  name: Temperature
+  entities:
+    - sensor.ds18b20_1
+    - sensor.ds18b20_2
+    - sensor.thermocouple
+
+humidity:
+  name: Humidity
+  entities:
+    - sensor.dht22_1_hum
+    - sensor.dht22_2_hum
+
+timedate:
+  name: Time and Date
+  entities:
+    - sensor.time
+    - sensor.date
+
+ruuvitag_1:
+  name: Incoming air
+  entities:
+    - sensor.ruuvi_air_temp
+    - sensor.ruuvi_air_hum
+    - sensor.ruuvi_air_pressure
+    - sensor.ruuvi_air_battery
+
+ruuvitag_2:
+  name: Roof paneling
+  entities:
+    - sensor.ruuvi_roof_temp
+    - sensor.ruuvi_roof_hum
+    - sensor.ruuvi_roof_pressure
+    - sensor.ruuvi_roof_battery
+
+local:
+  name: Current Weather
+  entities:
+    - sensor.forecastTime
+    - sensor.weather
+    - sensor.tempc
+    - sensor.humidity
+    - sensor.pressure
+    - sensor.windspeed
+    - sensor.winddirection
+    - sensor.location
+
+system:
+  name: System monitor
+  entities:
+    - sensor.memory_use_percent
+    - sensor.processor_use
+    - sensor.cpu_temp
+    - sensor.last_boot
+    - sensor.since_last_boot
+
+network:
+  name: Network stats
+  entities:
+    - sensor.ipv4_address_wlan0
+    - sensor.ipv4_address_enxb827eb325527
+
+services:
+  name: Restart services
+  entities:
+    - script.restart_snips
+    - script.restart_mopidy
+    - script.restart_nodered
+    - script.restart_networking

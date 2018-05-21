@@ -1,1 +1,8 @@
+# Test .gitignore
 test.txt
+
+# Home Assistant secrets
+secrets.yaml
+*.log
+*.db
+*.save

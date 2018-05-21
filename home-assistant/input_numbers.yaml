@@ -1,0 +1,20 @@
+slider_temperature:
+  name: Desired temperature
+  initial: 85
+  min: 60
+  max: 120
+  step: 1
+
+slider_humidity:
+  name: Desired humidity
+  initial: 20
+  min: 5
+  max: 40
+  step: 1
+
+water_level_warning:
+  name: Water level warning
+  initial: 70
+  min: 20
+  max: 180
+  step: 10

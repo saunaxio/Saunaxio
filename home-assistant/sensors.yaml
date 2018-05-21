@@ -1,0 +1,176 @@
+## Sensors used by Home Assistant
+
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
+
+# DHT22_1 sensor
+- platform: mqtt
+  state_topic: 'sensors/humidity/dht22_1'
+  name: 'dht22_1_hum'
+  unit_of_measurement: '%'
+  value_template: '{{ value_json.humidity }}'
+
+# DHT22_2 sensor
+- platform: mqtt
+  state_topic: 'sensors/humidity/dht22_2'
+  name: 'dht22_2_hum'
+  unit_of_measurement: '%'
+  value_template: '{{ value_json.humidity }}'
+
+# DS18B20_1 sensor
+- platform: mqtt
+  state_topic: 'sensors/temperature/ds18b20_1'
+  name: 'ds18b20_1'
+  unit_of_measurement: ' C'
+  value_template: '{{ value_json }}'
+
+# DS18B20_2 sensor
+- platform: mqtt
+  state_topic: 'sensors/temperature/ds18b20_2'
+  name: 'ds18b20_2'
+  unit_of_measurement: ' C'
+  value_template: '{{ value_json }}'
+
+# RuuviTag_1
+- platform: mqtt
+  state_topic: 'sensors/ruuvitag/ruuvi_b'
+  name: 'ruuvi_air_temp'
+  unit_of_measurement: ' C'
+  value_template: '{{ value_json.temperature }}'
+- platform: mqtt
+  state_topic: 'sensors/ruuvitag/ruuvi_b'
+  name: 'ruuvi_air_hum'
+  unit_of_measurement: ' %'
+  value_template: '{{ value_json.humidity }}'
+- platform: mqtt
+  state_topic: 'sensors/ruuvitag/ruuvi_b'
+  name: 'ruuvi_air_pressure'
+  unit_of_measurement: ' hPa'
+  value_template: '{{ value_json.pressure / 100 }}'
+- platform: mqtt
+  state_topic: 'sensors/ruuvitag/ruuvi_b'
+  name: 'ruuvi_air_battery'
+  unit_of_measurement: ' V'
+  value_template: '{{ value_json.battery / 1000 }}'
+
+# RuuviTag_2
+- platform: mqtt
+  state_topic: 'sensors/ruuvitag/ruuvi_c'
+  name: 'ruuvi_roof_temp'
+  unit_of_measurement: ' C'
+  value_template: '{{ value_json.temperature }}'
+- platform: mqtt
+  state_topic: 'sensors/ruuvitag/ruuvi_c'
+  name: 'ruuvi_roof_hum'
+  unit_of_measurement: ' %'
+  value_template: '{{ value_json.humidity }}'
+- platform: mqtt
+  state_topic: 'sensors/ruuvitag/ruuvi_c'
+  name: 'ruuvi_roof_pressure'
+  unit_of_measurement: ' hPa'
+  value_template: '{{ value_json.pressure / 100 }}'
+- platform: mqtt
+  state_topic: 'sensors/ruuvitag/ruuvi_c'
+  name: 'ruuvi_roof_battery'
+  unit_of_measurement: ' V'
+  value_template: '{{ value_json.battery / 1000 }}'
+
+# Waterlevel and Thermocouple
+- platform: mqtt
+  state_topic: 'sensors/distance/water_level'
+  name: 'water_level'
+  unit_of_measurement: ' litre'
+  value_template: '{{ value_json.distance }}'
+- platform: mqtt
+  state_topic: 'sensors/temperature/thermocouple'
+  name: 'thermocouple'
+  unit_of_measurement: ' C'
+  value_template: '{{ value_json.temperature }}'
+
+# Acceleration from RuuviTags
+- platform: mqtt
+  state_topic: 'sensors/ruuvitag/ruuvi_b'
+  name: 'acceleration'
+  value_template: '{{ value_json.accelerationZ }}'
+- platform: mqtt
+  state_topic: 'sensors/ruuvitag/ruuvi_c'
+  name: 'acceleration'
+  value_template: '{{ value_json.accelerationZ }}'
+
+# Weather from OpenWeatherMap
+- platform: mqtt
+  state_topic: 'sensors/weather/localWeather'
+  name: 'forecastTime'
+  value_template: '{{ value_json.time }}'
+- platform: mqtt
+  state_topic: 'sensors/weather/localWeather'
+  name: 'weather'
+  value_template: '{{ value_json.weather }}, {{ value_json.detail }}'
+- platform: mqtt
+  state_topic: 'sensors/weather/localWeather'
+  name: 'tempc'
+  unit_of_measurement: ' C'
+  value_template: '{{ value_json.tempc }}'
+- platform: mqtt
+  state_topic: 'sensors/weather/localWeather'
+  name: 'humidity'
+  unit_of_measurement: ' %'
+  value_template: '{{ value_json.humidity }}'
+- platform: mqtt
+  state_topic: 'sensors/weather/localWeather'
+  name: 'pressure'
+  unit_of_measurement: ' hPa'
+  value_template: '{{ value_json.pressure }}'
+- platform: mqtt
+  state_topic: 'sensors/weather/localWeather'
+  name: 'windspeed'
+  unit_of_measurement: ' m/s'
+  value_template: '{{ value_json.windspeed }}'
+- platform: mqtt
+  state_topic: 'sensors/weather/localWeather'
+  name: 'winddirection'
+  value_template: '{{ value_json.winddirection }}'
+- platform: mqtt
+  state_topic: 'sensors/weather/localWeather'
+  name: 'location'
+  value_template: '{{ value_json.location | replace("ae","ä") }}'
+- platform: mqtt
+  state_topic: 'sensors/weather/localWeather'
+  name: 'detail'
+  value_template: '{{ value_json.detail }}'
+
+
+- platform: template
+  sensors:
+    average_temp:
+      unit_of_measurement: " C"
+      value_template: >-
+        {{ (( float(states.sensor.ds18b20_1.state) + float(states.sensor.ds18b20_2.state) ) / 2) | round(1) }}
+
+- platform: template
+  sensors:
+    average_hum:
+      unit_of_measurement: " %"
+      value_template: >-
+        {{ (( float(states.sensor.dht22_1_hum.state) + float(states.sensor.dht22_2_hum.state)) / 2) | round(1) }}
+
+- platform: systemmonitor
+  resources:
+    - type: processor_use
+    - type: memory_use_percent
+    - type: ipv4_address
+      arg: wlan0
+    - type: ipv4_address
+      arg: enxb827eb325527
+    - type: disk_use
+    - type: disk_free
+    - type: last_boot
+    - type: since_last_boot
+
+- platform: mqtt
+  state_topic: 'sensors/cpu/temp'
+  name: 'cpu_temp'
+  value_template: '{{ value_json.temperature }}'
+
