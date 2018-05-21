@@ -6,3 +6,6 @@ secrets.yaml
 *.log
 *.db
 *.save
+
+# Mopidy configuration
+mopidy.conf
